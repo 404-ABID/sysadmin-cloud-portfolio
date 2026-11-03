@@ -1,0 +1,12 @@
+thor@jump-host ~$ ssh banner@stapp03
+banner@stapp03's password:
+Last login: Tue Nov  3 08:32:21 2026 from 10.244.13.11
+[banner@stapp03 ~]$ hostname
+stapp03
+[banner@stapp03 ~]$ getent passwd 1528
+[banner@stapp03 ~]$ sudo useradd -u 1528 -d /var/www/ammar -m ammar
+[sudo] password for banner:
+[banner@stapp03 ~]$ getent passwd 1528
+ammar:x:1528:1528::/var/www/ammar:/bin/bash
+[banner@stapp03 ~]$ ^C
+[banner@stapp03 ~]$
