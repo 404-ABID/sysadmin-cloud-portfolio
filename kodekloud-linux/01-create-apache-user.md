@@ -100,4 +100,4 @@ This output confirms that the account database contains the requested username, 
 
 ## Task Completion Evidence
 
-![KodeKloud task completion](images/01-create-apache-user.png)
+![KodeKloud task completion](image/01-create-apache-user.png)
