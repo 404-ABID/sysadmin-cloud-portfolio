@@ -102,7 +102,7 @@ This output confirms that the account database contains the requested username, 
 
 ## Terminal Session
 
-I have included my actual terminal session in a separate text file. It contains the commands I ran and the outputs from the task.
+I have included my actual terminal session in a separate log file. It contains the commands I ran and the outputs from the task.
 
 [View my actual terminal session](logs/01-create-apache-user.log)
 
