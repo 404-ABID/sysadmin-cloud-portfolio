@@ -11,10 +11,12 @@ My objective was to create a dedicated Linux user named `ammar` on App Server 3.
 
 ## Key Concepts
 
-- **Service isolation:** Linux user accounts provide identities that the operating system uses to manage access to files and processes. A dedicated account can help keep an application's files and processes separate from those belonging to other accounts.
-- **UIDs:** A user's UID is the numeric identity used by Linux for ownership and access checks. The username is the human-readable name associated with that UID. A UID should be unique to avoid account-identity conflicts.
-- **Home directories:** The home-directory field in the account database records the path associated with a user. Specifying that path and creating the directory on the filesystem are related but distinct operations.
+- **Linux user accounts and UIDs:** In Linux, we usually work with usernames, but each user also has a numeric ID called a UID (User ID). Linux uses this number to identify the account internally. In this task, the user `ammar` needed a specific UID (`1528`), so I had to provide that number when creating the account.
 
+- **Home directory:** A home directory is where a user's personal files and settings are normally stored. Most regular users have a home directory under `/home`, but we can also choose a different location. For this task, the required home directory was `/var/www/ammar`.
+
+- **Dedicated users for services:** Services such as Apache can use their own Linux accounts instead of running under a regular user's account. Keeping a separate account helps manage service-related ownership and permissions. In this task, I created the requested `ammar` account, but I did not change Apache's configuration to make the service run as this user.
+  
 ## Execution & Terminal Output
 
 ### 1. Connect to App Server 3
