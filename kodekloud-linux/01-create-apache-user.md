@@ -1,4 +1,4 @@
-# Create a Custom Apache User (`ammar`)
+# Create a Custom Apache User 
 
 **Date:** 3 November 2026  
 **Platform:** KodeKloud — xFusionCorp Industries, Stratos Datacenter  
@@ -99,6 +99,12 @@ This output confirms that the account database contains the requested username, 
 - Creating a Linux user with a specified UID and home-directory path.
 - Requesting home-directory creation with `useradd -m`.
 - Reading account information from the passwd database.
+
+## Terminal Session
+
+I have included my actual terminal session in a separate text file. It contains the commands I ran and the outputs from the task.
+
+[View my actual terminal session](logs/01-create-apache-user.log)
 
 ## Task Completion Evidence
 
