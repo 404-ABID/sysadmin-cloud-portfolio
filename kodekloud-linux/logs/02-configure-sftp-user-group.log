@@ -1,0 +1,98 @@
+thor@jump-host ~$ ssh tony@stapp01
+The authenticity of host 'stapp01 (10.244.240.167)' can't be established.
+ED25519 key fingerprint is SHA256:H5Okv+Cd9iGoRGhRUlq9TdWvdjYI2rI85uummmPyhz8.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'stapp01' (ED25519) to the list of known hosts.
+tony@stapp01's password: 
+[tony@stapp01 ~]$ hostname
+stapp01
+[tony@stapp01 ~]$ id jarod
+id: ‘jarod’: no such user
+[tony@stapp01 ~]$ sudo useradd jarod
+
+We trust you have received the usual lecture from the local System
+Administrator. It usually boils down to these three things:
+
+    #1) Respect the privacy of others.
+    #2) Think before you type.
+    #3) With great power comes great responsibility.
+
+[sudo] password for tony: 
+[tony@stapp01 ~]$ id jarod
+uid=1001(jarod) gid=1001(jarod) groups=1001(jarod)
+[tony@stapp01 ~]$ getent group nautilus_sftp_users
+[tony@stapp01 ~]$ groupadd nautilus_sftp_users
+groupadd: Permission denied.
+groupadd: cannot lock /etc/group; try again later.
+[tony@stapp01 ~]$ sudo groupadd nautilus_sftp_users
+[tony@stapp01 ~]$ sudo usermod -aG nautilus_sftp_users jarod
+[tony@stapp01 ~]$ getent group nautilus_sftp_users
+nautilus_sftp_users:x:1002:jarod
+[tony@stapp01 ~]$ exit
+logout
+Connection to stapp01 closed.
+thor@jump-host ~$ ssh steve@stapp02
+The authenticity of host 'stapp02 (10.244.221.29)' can't be established.
+ED25519 key fingerprint is SHA256:E1Rw5XW4UBibkwop2M/BJMc6kDkVIeSuXJCMK8Dhgi0.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'stapp02' (ED25519) to the list of known hosts.
+steve@stapp02's password: 
+[steve@stapp02 ~]$ hostname
+stapp02
+[steve@stapp02 ~]$ id jarod
+id: ‘jarod’: no such user
+[steve@stapp02 ~]$ getent group nautilus_sftp_users
+[steve@stapp02 ~]$ sudo groupadd nautilus_sftp_users
+
+We trust you have received the usual lecture from the local System
+Administrator. It usually boils down to these three things:
+
+    #1) Respect the privacy of others.
+    #2) Think before you type.
+    #3) With great power comes great responsibility.
+
+[sudo] password for steve: 
+[steve@stapp02 ~]$ sudo useradd jarod
+[steve@stapp02 ~]$ sudo usermod -aG nautilus_sftp_users jarod
+[steve@stapp02 ~]$ id jarod
+uid=1001(jarod) gid=1002(jarod) groups=1002(jarod),1001(nautilus_sftp_users)
+[steve@stapp02 ~]$ getent group nautilus_sftp_users
+nautilus_sftp_users:x:1001:jarod
+[steve@stapp02 ~]$ exit
+logout
+Connection to stapp02 closed.
+thor@jump-host ~$ ssh banner@stapp03
+The authenticity of host 'stapp03 (10.244.234.212)' can't be established.
+ED25519 key fingerprint is SHA256:o4ZK46SuIAcWGyxTfaQELrASJVKa1IlwI7Qg4gOhPK4.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'stapp03' (ED25519) to the list of known hosts.
+banner@stapp03's password: 
+[banner@stapp03 ~]$ hostname
+stapp03
+[banner@stapp03 ~]$ id jarod
+id: ‘jarod’: no such user
+[banner@stapp03 ~]$ sudo groupadd nautilus_sftp_users
+sudo useradd jarod
+sudo usermod -aG nautilus_sftp_users jarod
+
+We trust you have received the usual lecture from the local System
+Administrator. It usually boils down to these three things:
+
+    #1) Respect the privacy of others.
+    #2) Think before you type.
+    #3) With great power comes great responsibility.
+
+[sudo] password for banner: 
+[banner@stapp03 ~]$ id jarod
+uid=1001(jarod) gid=1002(jarod) groups=1002(jarod),1001(nautilus_sftp_users)
+[banner@stapp03 ~]$ getend group nautilus_sftp_users
+-bash: getend: command not found
+[banner@stapp03 ~]$ getent group nautilus_sftp_users
+nautilus_sftp_users:x:1001:jarod
+[banner@stapp03 ~]$ exit
+logout
+Connection to stapp03 closed.
+thor@jump-host ~$ 
