@@ -99,4 +99,4 @@ I have included my actual terminal session in a separate log file. It contains t
 
 ## Task Completion Evidence
 
-![KodeKloud task completion](image/02-configure-sftp-user-group.png)
+![KodeKloud task completion](images/02-configure-sftp-user-group.png)
