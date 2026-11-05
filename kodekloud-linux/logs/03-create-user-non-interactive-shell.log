@@ -1,0 +1,28 @@
+thor@jump-host ~$ ssh steve@stapp02
+The authenticity of host 'stapp02 (10.244.29.226)' can't be established.
+ED25519 key fingerprint is SHA256:CF40NV2YM8LxdHS1Hn2dUnJ4X9rGDIefOVh4Ojgg4pM.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'stapp02' (ED25519) to the list of known hosts.
+steve@stapp02's password: 
+[steve@stapp02 ~]$ hostname
+stapp02
+[steve@stapp02 ~]$ id kareem
+id: ‘kareem’: no such user
+[steve@stapp02 ~]$ sudo useradd -s /sbin/nologin kareem
+
+We trust you have received the usual lecture from the local System
+Administrator. It usually boils down to these three things:
+
+    #1) Respect the privacy of others.
+    #2) Think before you type.
+    #3) With great power comes great responsibility.
+
+[sudo] password for steve: 
+[steve@stapp02 ~]$ id kareem
+uid=1001(kareem) gid=1001(kareem) groups=1001(kareem)
+[steve@stapp02 ~]$ getent passwd kareem
+kareem:x:1001:1001::/home/kareem:/sbin/nologin
+[steve@stapp02 ~]$ sudo grep kareem /etc/passwd
+kareem:x:1001:1001::/home/kareem:/sbin/nologin
+[steve@stapp02 ~]$
