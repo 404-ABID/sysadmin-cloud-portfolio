@@ -108,4 +108,4 @@ I have included my actual terminal session in a separate log file. It contains t
 
 ## Task Completion Evidence
 
-![KodeKloud task completion](image/01-create-apache-user.png)
+![KodeKloud task completion](images/01-create-apache-user.png)
