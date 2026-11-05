@@ -154,12 +154,11 @@ I have included my actual terminal session in a separate log file. It contains t
 ## Task Completion Evidence
 
 **Attempt 1: Failed (Missing non-interactive shell)**
-![KodeKloud task failed - Attempt 1](image/03-create-user-non-interactive-shell-attempt-1.png)
+![KodeKloud task failed - Attempt 1](images/03-create-user-non-interactive-shell-attempt-1.png)
 
 **Attempt 2: Failed (Platform validator glitch)**
-![KodeKloud task failed - Attempt 2](image/03-create-user-non-interactive-shell-attempt-2.png)
+![KodeKloud task failed - Attempt 2](images/03-create-user-non-interactive-shell-attempt-2.png)
 
 **Attempt 3: Passed (Successful configuration)**
-![KodeKloud task passed - Attempt 3](image/03-create-user-non-interactive-shell-attempt-3.png)
----
+![KodeKloud task passed - Attempt 3](images/03-create-user-non-interactive-shell-attempt-3.png)
 
