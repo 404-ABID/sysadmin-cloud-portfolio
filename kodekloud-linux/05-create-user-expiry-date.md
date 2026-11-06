@@ -81,7 +81,14 @@ The `id` output confirmed that `kirsty` exists with UID and GID `1001`. The `cha
 - Inspecting account-aging settings with `chage`.
 - Verifying user-account configuration on a remote Linux server.
 
-## Task Completion Evidence
-*(The complete terminal session is available in [logs/05-create-user-expiry-date.log](logs/05-create-user-expiry-date.log))*
+## Terminal Session
 
-![KodeKloud task passed](images/05-create-user-expiry-date.png)
+The complete terminal session is available in the separate log file.
+
+[View my actual terminal session](logs/05-create-user-expiry-date.log)
+
+## Task Completion Evidence
+
+![KodeKloud task completion](images/05-create-user-expiry-date.png)
+
+---
