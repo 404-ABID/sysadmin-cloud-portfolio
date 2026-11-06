@@ -1,0 +1,34 @@
+thor@jump-host ~$ ssh banner@stapp03
+The authenticity of host 'stapp03 (10.244.244.133)' can't be established.
+ED25519 key fingerprint is SHA256:FyZmQvz01ZYjvK5BSLAIjWz3JrPCFU+3/71CNTeeBlI.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'stapp03' (ED25519) to the list of known hosts.
+banner@stapp03's password: 
+[banner@stapp03 ~]$ hostname
+stapp03
+[banner@stapp03 ~]$ id kirsty
+id: ‘kirsty’: no such user
+[banner@stapp03 ~]$ sudo useradd -e 2027-01-28 kirsty
+
+We trust you have received the usual lecture from the local System
+Administrator. It usually boils down to these three things:
+
+    #1) Respect the privacy of others.
+    #2) Think before you type.
+    #3) With great power comes great responsibility.
+
+[sudo] password for banner: 
+Sorry, try again.
+[sudo] password for banner: 
+[banner@stapp03 ~]$ id kirsty
+uid=1001(kirsty) gid=1001(kirsty) groups=1001(kirsty)
+[banner@stapp03 ~]$ sudo chage -l kirsty
+Last password change                                    : Nov 06, 2026
+Password expires                                        : never
+Password inactive                                       : never
+Account expires                                         : Jan 28, 2027
+Minimum number of days between password change          : 0
+Maximum number of days between password change          : 99999
+Number of days of warning before password expires       : 7
+[banner@stapp03 ~]$ 
