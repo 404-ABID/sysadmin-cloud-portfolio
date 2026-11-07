@@ -1,4 +1,4 @@
-# Copy Mariyam's Files to the Ecommerce Directory
+# Copy User Files to a New Directory (Preserving Structure)
 
 **Date:** 7 November 2026  
 **Platform:** KodeKloud — xFusionCorp Industries, Stratos Datacenter  
