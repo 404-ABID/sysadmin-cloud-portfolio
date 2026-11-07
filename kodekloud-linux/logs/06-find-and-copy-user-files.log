@@ -1,0 +1,22 @@
+thor@jump-host ~$ ssh steve@stapp02
+steve@stapp02's password: 
+Last login: Sat Nov  7 13:57:01 2026 from 10.244.30.21
+[steve@stapp02 ~]$ ls -ld /home/usersdata /ecommerce
+drwxrwxrwx 2 root root 4096 Nov  7 13:51 /ecommerce
+drwxr-xr-x 5 root root 4096 Nov  7 13:51 /home/usersdata
+[steve@stapp02 ~]$ cd /home/usersdata
+[steve@stapp02 usersdata]$ sudo find . -type f -user mariyam -print0 | sudo xargs -0 cp --parents -t /ecommerce
+
+We trust you have received the usual lecture from the local System
+Administrator. It usually boils down to these three things:
+
+    #1) Respect the privacy of others.
+    #2) Think before you type.
+    #3) With great power comes great responsibility.
+
+[sudo] password for steve: 
+[steve@stapp02 usersdata]$ find /home/usersdata -type f -user mariyam | wc -l
+1880
+[steve@stapp02 usersdata]$ find /ecommerce -type f | wc -l
+1880
+[steve@stapp02 usersdata]$ 
