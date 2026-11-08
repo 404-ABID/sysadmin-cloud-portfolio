@@ -1,0 +1,107 @@
+thor@jump-host ~$ ssh steve@stapp02
+The authenticity of host 'stapp02 (10.244.13.3)' can't be established.
+ED25519 key fingerprint is SHA256:RUP7WHrTeuBMI4ASe9yOhmoDx0mmFZEIw8GP3jhQkpQ.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'stapp02' (ED25519) to the list of known hosts.
+steve@stapp02's password: 
+[steve@stapp02 ~]$ sudo vim /etc/ssh/sshd_config
+
+We trust you have received the usual lecture from the local System
+Administrator. It usually boils down to these three things:
+
+    #1) Respect the privacy of others.
+    #2) Think before you type.
+    #3) With great power comes great responsibility.
+
+[sudo] password for steve: 
+[steve@stapp02 ~]$ sudo vim /etc/ssh/sshd_config
+[steve@stapp02 ~]$ sudo grep PermitRootLogin /etc/ssh/sshd_config
+#PermitRootLogin prohibit-password
+# the setting of "PermitRootLogin without-password".
+PermitRootLogin no
+[steve@stapp02 ~]$ ssh banner@stapp03
+The authenticity of host 'stapp03 (10.244.189.233)' can't be established.
+ED25519 key fingerprint is SHA256:Vfwwe/7MBJu3Ne3Dn40Lmd7K+gY2G4JgOVY3bs0/qR4.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'stapp03' (ED25519) to the list of known hosts.
+banner@stapp03's password: 
+[banner@stapp03 ~]$ sudo vim /etc/ssh/sshd_config
+
+We trust you have received the usual lecture from the local System
+Administrator. It usually boils down to these three things:
+
+    #1) Respect the privacy of others.
+    #2) Think before you type.
+    #3) With great power comes great responsibility.
+
+[sudo] password for banner: 
+[banner@stapp03 ~]$ sudo grep PermitRootLogin /etc/ssh/sshd_config
+#PermitRootLogin prohibit-password
+# the setting of "PermitRootLogin without-password".
+PermitRootLogin no
+[banner@stapp03 ~]$ ssh tony@stapp01
+The authenticity of host 'stapp01 (10.244.164.97)' can't be established.
+ED25519 key fingerprint is SHA256:SiHjWHJJODU9xclg6xWnruY0GQYj7G6vZyB1OMTCV0c.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'stapp01' (ED25519) to the list of known hosts.
+tony@stapp01's password: 
+Last login: Sun Nov  8 11:31:35 2026 from 10.244.97.163
+[tony@stapp01 ~]$ sudo vim /etc/ssh/sshd_config
+[sudo] password for tony: 
+Sorry, try again.
+[sudo] password for tony: 
+[tony@stapp01 ~]$ sudo grep PermitRootLogin /etc/ssh/sshd_config
+#PermitRootLogin prohibit-password
+# the setting of "PermitRootLogin without-password".
+PermitRootLogin no
+[tony@stapp01 ~]$ sudo sshd -t
+[tony@stapp01 ~]$ sudo systemctl reload sshd
+[tony@stapp01 ~]$ sudo systemctl status sshd
+● sshd.service - OpenSSH server daemon
+     Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; preset: enabled)
+     Active: active (running) since Sun 2026-11-08 10:58:40 UTC; 54min ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+    Process: 15647 ExecReload=/bin/kill -HUP $MAINPID (code=exited, status=0/SUCCESS)
+   Main PID: 1543 (sshd)
+      Tasks: 1 (limit: 404712)
+     Memory: 3.4M
+        CPU: 452ms
+     CGroup: /system.slice/sshd.service
+             └─1543 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+
+Nov 08 11:27:12 stapp01 sshd[8838]: pam_unix(sshd:session): session closed for user root
+Nov 08 11:31:34 stapp01 sshd[9816]: Accepted password for tony from 10.244.97.163 port 5>
+Nov 08 11:31:35 stapp01 sshd[9816]: pam_unix(sshd:session): session opened for user tony>
+Nov 08 11:49:28 stapp01 sshd[14374]: Accepted password for tony from 10.244.189.233 port>
+Nov 08 11:49:28 stapp01 sshd[14374]: pam_unix(sshd:session): session opened for user ton>
+Nov 08 11:52:44 stapp01 systemd[1]: Reloading OpenSSH server daemon...
+Nov 08 11:52:44 stapp01 sshd[1543]: Received SIGHUP; restarting.
+Nov 08 11:52:44 stapp01 systemd[1]: Reloaded OpenSSH server daemon.
+Nov 08 11:52:44 stapp01 sshd[1543]: Server listening on 0.0.0.0 port 22.
+Nov 08 11:52:44 stapp01 sshd[1543]: Server listening on :: port 22.
+[tony@stapp01 ~]$ ssh steve@stapp02
+The authenticity of host 'stapp02 (10.244.13.3)' can't be established.
+ED25519 key fingerprint is SHA256:RUP7WHrTeuBMI4ASe9yOhmoDx0mmFZEIw8GP3jhQkpQ.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'stapp02' (ED25519) to the list of known hosts.
+steve@stapp02's password: 
+Last login: Sun Nov  8 11:38:34 2026 from 10.244.97.163
+[steve@stapp02 ~]$ sudo sshd -t
+sudo systemctl reload sshd
+sudo systemctl is-active sshd
+[sudo] password for steve: 
+active
+[steve@stapp02 ~]$ ssh banner@stapp03
+banner@stapp03's password: 
+Last login: Sun Nov  8 11:47:05 2026 from 10.244.13.3
+[banner@stapp03 ~]$ sudo sshd -t
+sudo systemctl reload sshd
+sudo systemctl is-active sshd
+[sudo] password for banner: 
+active
+[banner@stapp03 ~]$ 
