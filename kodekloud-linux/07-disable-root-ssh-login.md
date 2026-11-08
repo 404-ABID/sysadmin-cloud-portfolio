@@ -74,11 +74,11 @@ The `PermitRootLogin no` directive is now present on every application server, a
 
 ## ⚠️ Lessons Learned & Notes
 
-- **Optimize multi-server workflows:** Instead of editing all servers first and reloading them later, executing the full "edit-validate-reload" cycle per server would reduce unnecessary SSH hopping
+- **Optimize multi-server workflows:** Instead of editing all servers first and reloading them later, executing the full "edit-validate-reload" cycle per server would reduce unnecessary SSH hopping.
 - **Use vim search for speed:** Navigating large configuration files manually is inefficient. Typing `/PermitRootLogin` in `vim` command mode jumped instantly to the correct line, speeding up the process across multiple servers.
 - **Always test SSH syntax:** Running `sshd -t` before reloading is a mandatory habit. A single typo in `sshd_config` can permanently lock an administrator out of a remote server.
 - **Reloading vs. Restarting:** Using `systemctl reload sshd` instead of `restart` is critical for production. It applies the new security configuration without dropping currently active SSH connections.
-- **Choose concise service checks:** I first used `systemctl status sshd`, which returned a lengthy service report. I switched to `systemctl is-active sshd` because it provided the exact information needed for this task with a simple `active` result.
+- **Choose concise service checks:** I first used `systemctl status sshd`, which returned a lengthy service report.Then I switched to `systemctl is-active sshd` because it provided the exact information needed for this task with a simple `active` result.
 
 ## Skills Practiced
 
