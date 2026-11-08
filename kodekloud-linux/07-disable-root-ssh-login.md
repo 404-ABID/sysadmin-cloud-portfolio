@@ -7,8 +7,6 @@
 
 ## Objective
 
-## Objective
-
 Disable direct root SSH login across all three application servers (`stapp01`, `stapp02`, `stapp03`) to comply with the security team's updated access-control policies. The SSH configuration must then be validated and the service cleanly reloaded to apply the new security rules.
 
 ## Execution & Terminal Output
