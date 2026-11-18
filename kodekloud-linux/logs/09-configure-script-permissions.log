@@ -1,0 +1,22 @@
+thor@jump-host ~$ ssh tony@stapp01
+The authenticity of host 'stapp01 (10.244.30.19)' can't be established.
+ED25519 key fingerprint is SHA256:b54MZncQD4kVVCFqwI8Ca41kIEOaBRfCtkhwjkPkOuE.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'stapp01' (ED25519) to the list of known hosts.
+tony@stapp01's password: 
+[tony@stapp01 ~]$ ls -l /tmp/xfusioncorp.sh
+---------- 1 root root 40 Nov 18 14:26 /tmp/xfusioncorp.sh
+[tony@stapp01 ~]$ sudo chmod 755 /tmp/xfusioncorp.sh
+
+We trust you have received the usual lecture from the local System
+Administrator. It usually boils down to these three things:
+
+    #1) Respect the privacy of others.
+    #2) Think before you type.
+    #3) With great power comes great responsibility.
+
+[sudo] password for tony: 
+[tony@stapp01 ~]$ ls -l /tmp/xfusioncorp.sh
+-rwxr-xr-x 1 root root 40 Nov 18 14:26 /tmp/xfusioncorp.sh
+[tony@stapp01 ~]$ 
